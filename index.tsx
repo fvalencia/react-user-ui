@@ -1,31 +1,16 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Hello from './Hello';
+
+import Layout from './src/app/core/Layout';
+import UserPage from './src/app/user/UserPage';
 import './style.css';
 
-interface AppProps { }
-interface AppState {
-  name: string;
-}
-
-class App extends Component<AppProps, AppState> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: 'React'
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <Layout>
+      <UserPage />
+    </Layout>
+  );
 }
 
 render(<App />, document.getElementById('root'));
